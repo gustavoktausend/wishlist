@@ -1,0 +1,43 @@
+# ===============================
+# General
+# ===============================
+server:
+  port: 8080
+  error.include-message: always
+spring:
+  application.name: wishlist-api
+  main.web-application-type: REACTIVE
+  profiles.active: local
+  jackson:
+    serialization.WRITE_DATES_AS_TIMESTAMPS: false
+    deserialization.fail-on-unknown-properties: false
+    default-property-inclusion: NON_ABSENT
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: wishlist
+      username: admin
+      password: 1qaz2wsx
+# ===============================
+# = API
+# ===============================
+api:
+  project.version: ^project.version^
+  host.link: http://localhost:8080/
+  app.link: https://localhost:8000
+
+# ===============================
+# = OpenAPI - Swagger
+# ===============================
+springdoc:
+  api-docs.path: /api/v1/wishlist-api/api-doc
+  swagger-ui:
+    path: /api/v1/wishlist-api/swagger-ui.html
+    operationsSorter: method
+  webjars.prefix: /docs
+swagger:
+  title: ^project.artifactId^
+  description: ^project.description^
+  version: ^project.version^
