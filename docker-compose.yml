@@ -1,0 +1,15 @@
+version: "5"
+services:
+  mongo_db:
+    image: mongo:latest
+    container_name: wishlistdb
+    ports:
+      - 27017:27017
+
+  wishlist:
+    image: wishlist:latest
+    container_name: wishlistAPI
+    ports:
+      - 8080:8080
+    links:
+      - mongo_db

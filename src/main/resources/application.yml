@@ -15,12 +15,12 @@ spring:
 
   data:
     mongodb:
-      host: localhost
-      port: 49351
+      host: mongo_db
+      port: 27017
       database: wishlistdb
       username: myUserAdmin
       password: 1qaz2wsx
-      uri: mongodb://localhost:49351/wishlistdb
+      uri: mongodb://mongo_db:27017/wishlistdb
       authentication-database: admin
       auto-index-creation: true
 # ===============================

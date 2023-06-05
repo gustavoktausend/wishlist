@@ -29,6 +29,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>wishlist</finalName>
     </build>
 
     <properties>

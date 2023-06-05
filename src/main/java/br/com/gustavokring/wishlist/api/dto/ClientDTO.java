@@ -10,7 +10,6 @@ import lombok.With;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
-import java.math.BigInteger;
 import java.util.List;
 
 import static br.com.gustavokring.wishlist.api.util.SocialNumberUtils.PATTERN_MAIL;
@@ -28,12 +27,7 @@ public class ClientDTO {
     @NotEmpty
     @Pattern(regexp= PATTERN_MAIL)
     String email;
-    @JsonIgnore
     List<ProductDTO> wishList;
-
-    public Boolean wishListIsFull() {
-        return wishList.size() >= 20;
-    }
 
     @JsonPOJOBuilder(withPrefix = "")
     public static class Builder {}

@@ -1,7 +1,5 @@
 package br.com.gustavokring.wishlist.api.config;
 
-import br.com.gustavokring.wishlist.api.model.ProductModel;
-import br.com.gustavokring.wishlist.api.repository.ProductRepository;
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoClients;
 import lombok.Getter;
@@ -9,10 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.mongodb.core.*;
 import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories;
-
-import java.io.IOException;
 
 @Configuration
 @RequiredArgsConstructor
@@ -42,13 +37,6 @@ public class RepositoryConfig {
     @Getter
     @Value("${spring.data.mongodb.uri}")
     private String uri;
-
-//    @Bean
-//    public ReactiveMongoTemplate reactiveMongoTemplate() throws IOException {
-//        var mongoClient = MongoClients.create(uri);
-//
-//        return new ReactiveMongoTemplate(mongoClient, database);
-//    }
 
     @Bean
     public MongoClient mongoClient() {

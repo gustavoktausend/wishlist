@@ -6,8 +6,10 @@ import br.com.gustavokring.wishlist.api.model.ClientModel;
 import br.com.gustavokring.wishlist.api.model.ProductModel;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
+import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 
 public final class ClientMapper {
@@ -19,7 +21,9 @@ public final class ClientMapper {
         if(nonNull(clientDTO.getWishList()))
             wishList = clientDTO.getWishList()
                     .stream()
-                    .map(ProductMapper::parseTo)
+                    .map(productDTO ->
+                        isNull(productDTO.getId()) ? ProductMapper.parseTo(productDTO) : ProductMapper.parseTo(productDTO).withId(productDTO.getId())
+                    )
                     .collect(Collectors.toList());
 
         return ClientModel.builder()
