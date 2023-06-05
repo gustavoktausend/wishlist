@@ -30,7 +30,7 @@ funcionamento do ecossistema, dessa forma a Wishlist do cliente
 deve possuir um limite máximo de 20 produtos.
 
 ## Premissas
-Linguagem: Java 11 ou >
-Framework http: Spring boot
-Gerenciador de dependência: Maven ou Gradle
-Banco de Dados: Qualquer noSQL
+- Linguagem: Java 11 ou >
+- Framework http: Spring boot
+- Gerenciador de dependência: Maven ou Gradle
+- Banco de Dados: Qualquer noSQL
